@@ -17,6 +17,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <MyButton />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -33,3 +34,8 @@ function App() {
 }
 
 export default App
+
+function MyButton() {
+  return <button onClick={() => window.open('https://github.com/TheSheDevil13', '_blank')}>Visit GitHub</button>
+}
+
