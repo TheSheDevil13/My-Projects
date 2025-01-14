@@ -36,6 +36,8 @@ function App() {
 export default App
 
 function MyButton() {
-  return <button onClick={() => window.open('https://github.com/TheSheDevil13', '_blank')}>Visit GitHub</button>
+  return <button 
+  className='github-button'
+  onClick={() => window.open('https://github.com/TheSheDevil13', '_blank')}>Visit GitHub</button>
 }
 

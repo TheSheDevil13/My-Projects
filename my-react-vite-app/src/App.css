@@ -40,3 +40,14 @@
 .read-the-docs {
   color: #888;
 }
+
+.github-button{
+  display: inline-block;
+  margin-top: 1em;
+  padding: 0.5em em;
+  border: 1px solid #1d95b9;
+  border-radius: 0.5em;
+  border-width: 0.2em;
+  background-color: #f5c83f;
+  color: rgb(161, 43, 194);
+}
