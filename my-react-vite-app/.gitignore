@@ -1,5 +1,14 @@
+# Node/React
+node_modules/
+dist/
+dist-ssr/
+*.local
+build/
+.env
+.env.*
+
 # Logs
-logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -7,10 +16,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +27,23 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# Python and Flask
+__pycache__/             # Ignore Python bytecode cache files
+*.pyc                    # Ignore Python compiled files
+*.pyo                    # Ignore Python optimized files
+*.pyd                    # Ignore Python dynamic modules
+venv/                    # Ignore Python virtual environment folder
+env/                     # If you name your environment 'env', ignore it
+*.env                    # Ignore environment variables file (holds sensitive info)
+*.flaskenv               # Ignore Flask environment file
+
+# Flask related files
+instance/                # Flask instance folder (holds configuration, secret keys, etc.)
+*.db                     # If you use a database like SQLite, ignore .db files
+*.sqlite3                # Ignore SQLite database files
+
+
+Thumbs.db                # Windows Thumbnails cache
+
