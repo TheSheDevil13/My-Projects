@@ -30,20 +30,23 @@ lerna-debug.log*
 
 
 # Python and Flask
-__pycache__/             # Ignore Python bytecode cache files
-*.pyc                    # Ignore Python compiled files
-*.pyo                    # Ignore Python optimized files
-*.pyd                    # Ignore Python dynamic modules
-venv/                    # Ignore Python virtual environment folder
-env/                     # If you name your environment 'env', ignore it
-*.env                    # Ignore environment variables file (holds sensitive info)
-*.flaskenv               # Ignore Flask environment file
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+env/
+*.env
+*.flaskenv
+
+# Dependencies
+flask_cors/
+flask_cors.egg-info/
 
 # Flask related files
-instance/                # Flask instance folder (holds configuration, secret keys, etc.)
-*.db                     # If you use a database like SQLite, ignore .db files
-*.sqlite3                # Ignore SQLite database files
+instance/              
+*.db                    
+*.sqlite3                
 
 
-Thumbs.db                # Windows Thumbnails cache
-
+Thumbs.db               
