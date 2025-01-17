@@ -39,4 +39,14 @@
 main {
   flex: 1;
 }
+
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
 /* Add your component-specific styles here */
