@@ -1,0 +1,14 @@
+# Root .gitignore (My-Projects/)
+# Only for files that exist in root directory
+
+# IDE/Editor
+.DS_Store
+.idea/
+.vscode/
+
+# Temporary files
+*.tmp
+*.temp
+
+# System files
+Thumbs.db
