@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from 'react';
+import AddTask from './components/AddTask';
+import TaskList from './components/TaskList';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [tasks, setTasks] = useState([]);
+
+  // Load tasks from localStorage on initial render
+  useEffect(() => {
+    const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    setTasks(savedTasks);
+  }, []);
+
+  // Save tasks to localStorage whenever tasks change
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
+
+  // Add a new task
+  const addTask = (text) => {
+    const newTask = { id: Date.now(), text, completed: false };
+    setTasks([...tasks, newTask]);
+  };
+
+  // Delete a task by ID
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
+  // Toggle task completion by ID
+  const toggleTask = (id) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task
+      )
+    );
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="App">
+      <h1>To-Do App</h1>
+      <AddTask onAdd={addTask} />
+      <TaskList tasks={tasks} onDelete={deleteTask} onToggle={toggleTask} />
+    </div>
+  );
+};
 
-export default App
+export default App;
