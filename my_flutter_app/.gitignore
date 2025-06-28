@@ -43,3 +43,15 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Additional Flutter/Dart files that should be ignored
+.metadata
+pubspec.lock
+
+# Android build files
+android/app/build.gradle.kts
+
+# Generated plugin registrant files
+**/generated_plugin_registrant.cc
+**/generated_plugin_registrant.h
+**/generated_plugins.cmake
