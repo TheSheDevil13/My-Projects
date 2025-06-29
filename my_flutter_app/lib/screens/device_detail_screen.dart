@@ -244,22 +244,23 @@ class _DeviceDetailScreenState extends State<DeviceDetailScreen> {
               ],
             ),
             const SizedBox(height: 16),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: DataTable(
-                headingRowHeight: 50,
-                dataRowMinHeight: 45,
-                dataRowMaxHeight: 45,
-                columnSpacing: 40,
-                headingTextStyle: const TextStyle(
-                  color: AppColors.textPrimary,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-                dataTextStyle: const TextStyle(
-                  color: AppColors.textSecondary,
-                  fontSize: 13,
-                ),
+            Center(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: DataTable(
+                  headingRowHeight: 50,
+                  dataRowMinHeight: 45,
+                  dataRowMaxHeight: 45,
+                  columnSpacing: 40,
+                  headingTextStyle: const TextStyle(
+                    color: AppColors.textPrimary,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                  ),
+                  dataTextStyle: const TextStyle(
+                    color: AppColors.textSecondary,
+                    fontSize: 13,
+                  ),
                 columns: const [
                   DataColumn(
                     label: Text('Time'),
@@ -292,6 +293,7 @@ class _DeviceDetailScreenState extends State<DeviceDetailScreen> {
                     ],
                   );
                 }).toList(),
+                ),
               ),
             ),
             const SizedBox(height: 16),
